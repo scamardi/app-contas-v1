@@ -1,0 +1,17 @@
+type: object
+properties:
+  cnpj:
+    type: string
+    description: >-
+      Número de identificação fiscal que registra e identifica legalmente empresas e outras entidades 
+      jurídicas no Brasil.
+    example: 12345678000195
+    pattern: '^[0-9]{14}$'
+    minLength: 14
+    maxLength: 14
+  elegivel:
+    type: boolean
+    description: Indica se é a abertura de contas é elegível para a pessoa jurídica.
+    example: true
+required:
+  - cnpj

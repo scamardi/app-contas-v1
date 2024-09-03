@@ -1,0 +1,7 @@
+openapi: 3.0.0
+info:
+  title: API Conta
+  version: 1.0.0
+paths:
+  /contas/v1/elegibilidade-pessoas-juridicas:
+    $ref: "./resources/post-elegibilidade-pessoa-juridica.yml"

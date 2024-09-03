@@ -1,0 +1,17 @@
+post:
+  description: Elegibilidade abertura de contas PF
+  summary: Retorna a elegibilidade da pessoa jurídica para abertura de contas
+  responses:
+    '200':
+      description: Elegibilidade da conta retornada com sucesso.
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/elegibilidadePJ.yml"
+    '400':
+      description: Solicitação inválida.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: "../schemas/elegibilidadePJ.yml"

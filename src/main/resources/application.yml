@@ -1,0 +1,51 @@
+server:
+  port: 8080
+application:
+  name: ${APP_NAME:contas}
+spring:
+  profiles:
+    active: ${ENVIRONMENT:local}
+  datasource:
+    url: ${DATABASE_ENDPOINT:jdbc:postgresql://localhost:5432/db}
+    username: ${DATABASE_USERNAME:user}
+    password: ${DATABASE_PASSWORD:password}
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 5
+      idle-timeout: 20000
+      connection-timeout: 10000
+      max-lifetime: 1800000
+      auto-commit: true
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+        connection:
+          provider_disables_autocommit: true
+    open-in-view: false
+    show-sql: false
+management:
+  endpoints:
+    web:
+      base-path: /
+      path-mapping:
+        prometheus: metrics
+      exposure:
+        include: health,info,prometheus
+  health:
+    probes:
+      enabled: true
+    livenessstate:
+      enabled: true
+    readinessstate:
+      enabled: true
+  endpoint:
+    health:
+      group:
+        liveness:
+          include: livenessProbe,livenessState
+        readiness:
+          include: readinessProbe,readinessState
+      show-details: always
