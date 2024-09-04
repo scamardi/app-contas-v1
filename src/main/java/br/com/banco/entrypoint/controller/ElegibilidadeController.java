@@ -23,6 +23,7 @@ public class ElegibilidadeController {
             @RequestHeader HttpHeaders httpHeaders,
             @Valid @RequestBody ElegibilidadePJ dadosPJ
     ) {
+
         return new ResponseEntity<>(elegibilidadeService.verificaElegibilidadePJ(httpHeaders, dadosPJ), HttpStatus.OK);
     }
 

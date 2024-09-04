@@ -33,6 +33,7 @@ dependencies {
     implementation 'io.swagger.core.v3:swagger-core:2.2.23'
     implementation 'io.swagger.core.v3:swagger-annotations:2.2.23'
     implementation 'io.swagger.core.v3:swagger-core-jakarta:2.2.23'
+    implementation 'org.springdoc:springdoc-openapi-ui:1.7.0'
     implementation 'org.mapstruct:mapstruct:1.6.0'
     implementation 'io.micrometer:micrometer-registry-prometheus'
     implementation 'junit:junit:4.13.2'

@@ -9,7 +9,7 @@ gradle/
 ### IntelliJ IDEA ###
 .idea/modules.xml
 .idea/jarRepositories.xml
-.idea/compiler.xml
+.idea/compiler.xm
 .idea/libraries/
 *.iws
 *.iml
